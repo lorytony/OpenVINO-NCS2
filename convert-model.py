@@ -14,8 +14,6 @@ import onnx
 
 print("conversion")
 vgg_model = tf.keras.models.load_model('model/model.h5')
-#vgg_model = tf.keras.models.load_model('model/model.h5')
 
-#vgg_model.save('./vgg16net/') #it should save into pb formato
-onnx_model, _ = tf2onnx.convert.from_keras(vgg_model, opset=11)#opset=13
+onnx_model, _ = tf2onnx.convert.from_keras(vgg_model, opset=11)#I tried also with opset=13
 onnx.save(onnx_model, "model-opset10.onnx")
