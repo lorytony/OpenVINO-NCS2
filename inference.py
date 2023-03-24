@@ -60,7 +60,7 @@ print(classification_report(y, y_pred, output_dict = True)['weighted avg'])
 print(classification_report(y, y_pred, output_dict = True)['accuracy'])
 
 # ***************** Keras model - MYRIAD 
-model = core.read_model(model=path_model_xml_opt4)
+model = core.read_model(model=path_model_keras)
 model.reshape([1,300,200,3])
 compiled_model = core.compile_model(model=model, device_name="MYRIAD")
 input_layer = compiled_model.input(0)
